@@ -5,24 +5,33 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Gtk2
 %define		pnam	CV
-Summary:	perl(Gtk2::CV) - 
+Summary:	Gtk2::CV - a fast GTK+ image viewer loosely modeled after XV
+Summary(pl):	Gtk2::CV - szybka przegl±darka obrazków oparta na GTK+ robiona na wzór XV
 Name:		perl-Gtk2-CV
 Version:	1.2
 Release:	0.1
-# note if it is "same as perl"
-License:	(enter GPL/LGPL/BSD/BSD-like/Artistic/other license name here)
+License:	unknown
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	94fa4d991704f5ff038650ec2eeab0cd
+URL:		http://search.cpan.org/dist/Gtk2-CV/
+BuildRequires:	libjpeg-devel
+BuildRequires:	libmagic-devel
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-%if %{with tests}
-%endif
+Requires:	perl-Gtk2 >= 1.08
+Requires:	perl-Gtk2-GladeXML >= 0.93
+Requires:	perl-IO-AIO >= 1.4
+Requires:	perl(Gtk2::PodViewer) >= 0.03
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-perl module Gtk2::CV which implements image viewer, but unfortunatelly
+Perl module Gtk2::CV which implements image viewer, but unfortunatelly
 there is no documentation for base module. 
+
+%description -l pl
+Modu³ Perla Gtk2::CV implementuje przegl±darkê obrazków, ale niestety
+nie ma dokumentacji dla g³ównego modu³u.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -49,15 +58,16 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README
 %attr(755,root,root) %{_bindir}/cv
-%dir %{perl_vendorarch}/auto/Gtk2/CV
-%{perl_vendorarch}/auto/Gtk2/CV/CV.*
 %{perl_vendorarch}/Gtk2/CV.pm
-%{perl_vendorarch}/Gtk2/CV/Plugin/*.pm
-%{perl_vendorarch}/Gtk2/CV/*.pm
 %dir %{perl_vendorarch}/Gtk2/CV
+%{perl_vendorarch}/Gtk2/CV/*.pm
+%{perl_vendorarch}/Gtk2/CV/gtkrc
 %dir %{perl_vendorarch}/Gtk2/CV/Plugin
+%{perl_vendorarch}/Gtk2/CV/Plugin/*.pm
 %dir %{perl_vendorarch}/Gtk2/CV/images
 %{perl_vendorarch}/Gtk2/CV/images/*.png
-%{perl_vendorarch}/Gtk2/CV/gtkrc
-%{_mandir}/man3/*
+%dir %{perl_vendorarch}/auto/Gtk2/CV
+%{perl_vendorarch}/auto/Gtk2/CV/CV.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Gtk2/CV/CV.so
 %{_mandir}/man1/*
+%{_mandir}/man3/*
