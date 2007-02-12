@@ -6,7 +6,7 @@
 %define		pdir	Gtk2
 %define		pnam	CV
 Summary:	Gtk2::CV - a fast GTK+ image viewer loosely modeled after XV
-Summary(pl):	Gtk2::CV - szybka przegl±darka obrazków oparta na GTK+ robiona na wzór XV
+Summary(pl.UTF-8):   Gtk2::CV - szybka przeglÄ…darka obrazkÃ³w oparta na GTK+ robiona na wzÃ³r XV
 Name:		perl-Gtk2-CV
 Version:	1.2
 Release:	0.1
@@ -29,9 +29,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Perl module Gtk2::CV which implements image viewer, but unfortunatelly
 there is no documentation for base module. 
 
-%description -l pl
-Modu³ Perla Gtk2::CV implementuje przegl±darkê obrazków, ale niestety
-nie ma dokumentacji dla g³ównego modu³u.
+%description -l pl.UTF-8
+ModuÅ‚ Perla Gtk2::CV implementuje przeglÄ…darkÄ™ obrazkÃ³w, ale niestety
+nie ma dokumentacji dla gÅ‚Ã³wnego moduÅ‚u.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
