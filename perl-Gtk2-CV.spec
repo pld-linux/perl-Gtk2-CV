@@ -8,15 +8,17 @@
 Summary:	Gtk2::CV - a fast GTK+ image viewer loosely modeled after XV
 Summary(pl.UTF-8):	Gtk2::CV - szybka przeglądarka obrazków oparta na GTK+ robiona na wzór XV
 Name:		perl-Gtk2-CV
-Version:	1.54
+Version:	1.56
 Release:	1
 License:	unknown
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	080c020aea36941979b97c7ef1f9f54d
+# Source0-md5:	bdb90f338b477778a4bc9c36f46e4cfc
 URL:		http://search.cpan.org/dist/Gtk2-CV/
 BuildRequires:	libjpeg-devel
 BuildRequires:	libmagic-devel
+BuildRequires:	perl-Glib-devel
+BuildRequires:	perl-Gtk2-devel
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	perl-Gtk2 >= 1.08
