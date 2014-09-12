@@ -70,7 +70,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/Gtk2/CV/images
 %{perl_vendorarch}/Gtk2/CV/images/*.png
 %dir %{perl_vendorarch}/auto/Gtk2/CV
-%{perl_vendorarch}/auto/Gtk2/CV/CV.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Gtk2/CV/CV.so
 %{_mandir}/man1/*
 %{_mandir}/man3/*
