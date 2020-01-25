@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Gtk2
 %define		pnam	CV
 Summary:	Gtk2::CV - a fast GTK+ image viewer loosely modeled after XV
